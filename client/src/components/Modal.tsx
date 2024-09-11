@@ -68,7 +68,7 @@ export const Modal = ({
       // Update existing clinic
       try {
         const response = await fetch(
-          `http://localhost:5000/api/clinics/${clinicToEdit._id}`,
+          `https://clinic-j86l.onrender.com/api/clinics/${clinicToEdit._id}`,
           {
             method: "PUT",
             headers: {
@@ -114,13 +114,16 @@ export const Modal = ({
     };
 
     try {
-      const response = await fetch("http://localhost:5000/api/clinics", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newClinic),
-      });
+      const response = await fetch(
+        "https://clinic-j86l.onrender.com/api/clinics",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newClinic),
+        }
+      );
 
       if (response.ok) {
         const addedClinic = await response.json();

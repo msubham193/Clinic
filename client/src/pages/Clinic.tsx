@@ -32,7 +32,7 @@ const Clinic = () => {
   useEffect(() => {
     const fetchClinics = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/clinics");
+        const response = await fetch("https://clinic-j86l.onrender.com/api/clinics");
         if (response.ok) {
           const data: ClinicType[] = await response.json();
           setClinics(data);
@@ -70,7 +70,7 @@ const Clinic = () => {
   // Handle delete click
   const handleDeleteClick = async (id: string) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/clinics/${id}`, {
+      const response = await fetch(`https://clinic-j86l.onrender.com/api/clinics/${id}`, {
         method: "DELETE",
       });
 
